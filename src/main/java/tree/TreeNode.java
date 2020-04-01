@@ -56,4 +56,24 @@ public class TreeNode {
         }
         return root;
     }
+
+    public static boolean equals(TreeNode t1,TreeNode t2){
+        if (t1 == null && t2 == null) {
+            return true;
+        }
+
+        if (t1 == null || t2 == null) {
+            return false;
+        }
+
+        if (t1.val.equals(t2.val)) {
+            boolean left = equals(t1.left, t2.left);
+            boolean right = equals(t1.right, t2.right);
+
+            return left && right;
+        }
+
+        return false;
+    }
+
 }

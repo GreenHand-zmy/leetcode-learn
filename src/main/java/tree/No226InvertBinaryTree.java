@@ -1,5 +1,6 @@
 package tree;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -41,10 +42,10 @@ public class No226InvertBinaryTree {
      * 9   6 3   1
      */
     @Test
-    public void testCase1(){
-        TreeNode result = TreeNode.of("[4,2,7,1,3,6,9]");
-        TreeNode treeNode = invertTree(result);
-        System.out.println(treeNode);
+    public void testCase1() {
+        TreeNode result = invertTree(TreeNode.of("[4,2,7,1,3,6,9]"));
+        TreeNode ans = TreeNode.of("[4,7,2,9,6,3,1]");
+        Assert.assertTrue(TreeNode.equals(ans, result));
     }
 
 
